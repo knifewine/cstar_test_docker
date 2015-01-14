@@ -1,14 +1,11 @@
 # NOTE: this file is auto-generated! To make changes edit Dockerfile.template instead!
 FROM ubuntu
-
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip
-
-{{jdk_setup_steps}}
+  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip openjdk-7-jdk
 
 # This git clone will be cached so by docker so it may get behind the actual repo, but the git pull below should bring it up to date
 # You can always run docker with --no-cache to make sure this is a truly up-to-date clone

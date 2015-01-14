@@ -28,11 +28,11 @@ echo $GIT_SHA > git_sha.txt
 # hack to set same times on file, prevent unnecessary docker cache invalidation
 touch -d 2015-01-1 git_sha.txt
 
-# add a note to the Dockerfile so no one edits it directly
+# Create new Dockerfile and add a note so no one edits it directly
 echo "# NOTE: this file is auto-generated! To make changes edit Dockerfile.template instead!" > Dockerfile
 
-# update Dockerfile to set git ref and for specific jvm
+# update Dockerfile to set git ref
 sed s/{{git_ref_to_build}}/$GIT_REF/g Dockerfile.template >> Dockerfile
 
 # this will run the Dockerfile and build the image
-#docker build .
+docker build .

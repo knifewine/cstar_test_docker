@@ -4,15 +4,8 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip && \
-  rm -rf /var/lib/apt/lists/*
-RUN \
-  echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update && \
-  apt-get install -y oracle-java7-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk7-installer
+  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip openjdk-7-jdk
+
 # This git clone will be cached so by docker so it may get behind the actual repo, but the git pull below should bring it up to date
 # You can always run docker with --no-cache to make sure this is a truly up-to-date clone
 RUN git clone https://github.com/apache/cassandra.git
