@@ -35,4 +35,4 @@ echo "# NOTE: this file is auto-generated! To make changes edit Dockerfile.templ
 sed s/{{git_ref_to_build}}/$GIT_REF/g Dockerfile.template >> Dockerfile
 
 # this will run the Dockerfile and build the image
-docker build .
+docker build -t cstar/openjdk:${GIT_REF}_${GIT_SHA:0:10} .

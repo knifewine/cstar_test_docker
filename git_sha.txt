@@ -1,1 +1,0 @@
-23fe7e9d877dfd4a625f0d997383c1ffa876046b refs/tags/cassandra-2.0.10
