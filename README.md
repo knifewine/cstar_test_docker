@@ -110,4 +110,16 @@ Issue the netem command to slow packets. Note the 'add' keyword which adds the r
 
 You can issue a similar command on the other Cassandra container which will slow the ping to 200ms delay round trip. Note that I think these commands only slow outbound traffic -- I get the impression that slowing down or messing with inbound traffic requires more magic.
 
+To restore normal networking, repeat the same command as before, but change 'add' to 'del', to remove the rule:
+
+    tc qdisc del dev ethwe root netem delay 100ms
+
+A note on MTU: it appears that the 'ethwe' adapter uses a rather large MTU of 65535. This can easily be lowered to a smaller value to cause smaller packets to be used.
+
+    root@2605b2e3a44c:/cassandra# ifconfig ethwe | grep MTU
+          UP BROADCAST RUNNING MULTICAST  MTU:65535  Metric:1
+    root@2605b2e3a44c:/cassandra# ifconfig ethwe mtu 9000
+    root@2605b2e3a44c:/cassandra# ifconfig ethwe | grep MTU
+          UP BROADCAST RUNNING MULTICAST  MTU:9000  Metric:1
+
 **Enjoy!**
