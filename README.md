@@ -1,7 +1,7 @@
 # cstar_test_docker
 This is a really simple tool for building simple Cassandra docker containers, for test purposes.
 
-The container does NOT currently start C*, because you'll probably want to tweak it, edit config, etc.
+The container does NOT currently start Cassandra automatically, because you'll probably want to tweak it, edit config, etc.
 
 Cassandra is installed to /cassandra -- the image built will have openjdk7.
 
