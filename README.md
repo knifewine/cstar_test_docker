@@ -100,7 +100,7 @@ Start up two containers with weave, on 10.0.1.1 and 10.0.1.2 (omitting the secon
     64 bytes from 10.0.1.2: icmp_seq=1 ttl=64 time=0.187 ms
     64 bytes from 10.0.1.2: icmp_seq=2 ttl=64 time=0.044 ms
     
-Issue the netem command to slow packets. Note the 'add' keywork which adds the rule, the 'ethwe' which applies it to the weave network adapter.
+Issue the netem command to slow packets. Note the 'add' keyword which adds the rule, the 'ethwe' which applies it to the weave network adapter.
 
     root@8fab0a2491b1:/cassandra# tc qdisc add dev ethwe root netem delay 100ms
     root@8fab0a2491b1:/cassandra# ping 10.0.1.2
