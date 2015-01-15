@@ -108,6 +108,6 @@ Issue the netem command to slow packets. Note the 'add' keywork which adds the r
     64 bytes from 10.0.1.2: icmp_seq=1 ttl=64 time=100 ms
     64 bytes from 10.0.1.2: icmp_seq=2 ttl=64 time=100 ms
 
-You can issue a similar command on the other Cassandra container which will slow the ping to 200ms delay.
+You can issue a similar command on the other Cassandra container which will slow the ping to 200ms delay round trip. Note that I think these commands only slow outbound traffic -- I get the impression that slowing down or messing with inbound traffic requires more magic.
 
 **Enjoy!**
