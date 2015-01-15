@@ -9,7 +9,7 @@ If you want the Oracle JDK have a look at oracle_jdk.txt to see how you might up
 
 The main entry point is build.sh, which just does a little bit of trickery to build a Dockerfile and then invokes docker's build process.
 
-This was build to make the best use of Docker's caching system but hopefully without you getting any stale Cassandra source code.
+This was built to make the best use of Docker's caching system but hopefully without you getting any stale Cassandra source code.
 
 #### Setup
 
@@ -41,7 +41,7 @@ Go ahead and start a container from the image. This will take you to an interact
     
 Or alternatively using the docker image ID:
     
-    docker run -t -i --privileged=true cstar/openjdk:cassandra-2.0.10_23fe7e9d87
+    docker run -t -i --privileged=true 711bf544f999
     
 Start up cassandra in the foreground:
 
