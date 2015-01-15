@@ -66,7 +66,7 @@ Run 'weave setup' to let weave build it's own docker image.
 
 Run 'weave launch' to start the weave container on your docker host.
 
-If your containers are going to span multiple hosts, run 'weave setup' on the other machines, and 'weave launch <ip_address>', where the ip_address is the ip of the machine already running Weave.
+If your containers are going to span multiple hosts, run 'weave setup' on the other machines, and 'weave launch \<ip_address\>', where the ip_address is the ip of the machine already running Weave.
 
 Start up your containers using Weave syntax to assign an ip address. IP's on the same subnet will be visible to each other, regardless of host running container.
 
