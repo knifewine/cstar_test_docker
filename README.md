@@ -43,7 +43,7 @@ Or alternatively using the docker image ID:
     
     docker run -t -i --privileged=true 711bf544f999
     
-Start up cassandra in the foreground:
+From the container's shell, start up cassandra in the foreground to test it out:
 
     /cassandra/bin/cassandra -f
 
