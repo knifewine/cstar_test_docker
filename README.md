@@ -13,7 +13,7 @@ This was built to make the best use of Docker's caching system but hopefully wit
 
 #### Setup
 
-Install docker -- on debian you can use the docker.io package, or read the instructions at: https://docs.docker.com/installation/#installation
+Install docker -- on debian you can install the 'docker.io' package, or read the instructions at: https://docs.docker.com/installation/#installation
 
 If you have trouble running docker, trying installing the apparmor package which seems to be required.
 
