@@ -70,7 +70,7 @@ If your containers are going to span multiple hosts, run 'weave setup' on the ot
 
 Start up your containers using Weave syntax to assign an ip address. IP's on the same subnet will be visible to each other, regardless of host running container.
 
-    C=$(sudo weave run 10.0.1.1/24 -t -i --privileged=true cstar/openjdk:cassandra-2.0.10_23fe7e9d87
+    C=$(sudo weave run 10.0.1.1/24 -t -i --privileged=true cstar/openjdk:cassandra-2.0.10_23fe7e9d87)
     
 Repeat the above for each Cassandra instance you want, but be sure to increment the IP addresses! Hang on to the container ID assigned above, or use 'docker ps' to see what containers are running.
 
