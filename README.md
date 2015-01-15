@@ -3,7 +3,7 @@ This is a really simple tool for building simple Cassandra docker containers, fo
 
 The container does NOT currently start C*, because you'll probably want to tweak it, edit config, etc.
 
-Cassandra is installed to /cassandra -- the image build will have openjdk7.
+Cassandra is installed to /cassandra -- the image built will have openjdk7.
 
 If you want the Oracle JDK have a look at oracle_jdk.txt to see how you might update the Dockerfile.tempate to do that.
 
