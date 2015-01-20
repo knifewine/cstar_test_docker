@@ -19,7 +19,7 @@ If you have trouble running docker, trying installing the apparmor package which
 
 If you don't want to use sudo for everything, add your user to the 'docker' group on your computer (this is root equivalent, so don't do this if you are the paranoid type).
 
-Run the build script with a valid git ref from the cassandra repository (ex: 'cassandra-2.1'). This will build an image for you and build cassandra at the git ref specified.
+Run the build script with a valid branch/tag git ref from the cassandra repository (ex: 'cassandra-2.1'). Raw commit id's are not yet supported. This will build an image for you and build cassandra at the git ref specified.
 
     ./build.sh cassandra-2.1
 
