@@ -19,13 +19,14 @@ If you have trouble running docker, trying installing the apparmor package which
 
 If you don't want to use sudo for everything, add your user to the 'docker' group on your computer (this is root equivalent, so don't do this if you are the paranoid type).
 
-Run the build script with a valid branch/tag git ref from the cassandra repository (ex: 'cassandra-2.1'). Raw commit id's are not yet supported. This will build an image for you and build cassandra at the git ref specified.
+Run the build script with a valid branch/tag git ref from the cassandra repository (ex: 'cassandra-2.1'). This will build an image for you and build cassandra at the git ref specified. Note that git commit SHA's are supported, but are not validated ahead of container build (so the build could fail if you use a bad commit id).
 
     ./build.sh cassandra-2.1
 
 Wait for the image to build. It's going to take a while, but after Docker's cache is built it should be pretty quick on subsequent runs.
 
-The image will get automatically named something like 'cstar/openjdk:cassandra-2.0.10_23fe7e9d87'. The first portion indicates you've got Cassandra with the openjdk, the second portion shows the git ref name you used, and the git SHA it referenced at build time (because this could change in the case of a branch build).
+The image will get automatically named something like 'cstar/openjdk:cassandra-2.0.10_23fe7e9d87'. The first portion indicates you've got Cassandra with the openjdk, the second portion shows the git ref name you used, and the git SHA it referenced at build time (because this could change in the case of a branch build). Be aware that if you use a tag, the SHA will point to the tag, not the tag's referenced commit id.
+
 You can list the docker images with
 
     docker images
