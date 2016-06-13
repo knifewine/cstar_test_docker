@@ -4,14 +4,14 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip openjdk-7-jdk
+  apt-get install -y byobu curl git htop man unzip vim wget ant python python-dev python-pip openjdk-8-jdk
 
 # This git clone will be cached by docker so it may get behind the actual repo -- but the git pull below should bring it up to date when necessary.
 # You can always run docker with --no-cache to make sure this is a truly up-to-date clone
 RUN git clone https://github.com/apache/cassandra.git
 WORKDIR cassandra
 # ADD a file with the git sha (as queried from the remote repo), so the docker cache may be invalidated from this point forward if necessary
-ADD git_sha.txt / 
+ADD git_sha.txt /
 RUN git pull
-RUN git checkout {{git_ref_to_build}} 
+RUN git checkout {{git_ref_to_build}}
 RUN ant clean jar
